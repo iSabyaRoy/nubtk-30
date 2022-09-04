@@ -1,41 +1,154 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-color: rgb(255, 251, 1);
+    --secondary-color: rgb(255, 208, 1);
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: rgb(48, 48, 48);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ul{
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
     list-style: none;
 }
 
 
-a{
+a {
     text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
 }
 
 
-.container{
+.container {
     padding: 0 10%;
 }
 
 /* start menu design */
 
-.menu{
-    background: #fff;
+.menu {
+    background: var(--black-color);
     box-shadow: 0 2px 5px rgb(216, 216, 216);
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
-.menu__container{
+.menu__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu .nav ul{
+.menu .logo {
+    width: 120px;
+    
+}
+
+.menu .logo a{
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    font-size: 20px;
+}
+
+.menu .logo i{
+    background: var(--primary-color);
+    color: var(--black-color);
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .nav ul {
     display: flex;
     gap: 30px;
 }
 
-/* end menu design */
+.menu .nav .menu-item {
+    position: relative;
+}
 
+
+
+.menu .nav .menu-item:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu .nav .menu-item .nav-link {
+    color: var(--white-color);
+}
+
+.menu .nav .menu-item:hover .nav-link {
+    color: var(--primary-color);
+}
+
+.menu .nav .menu-item .nav-link i {
+    font-size: 12px;
+}
+
+
+
+.menu .login {
+    background: var(--primary-color);
+    padding: 10px 20px;
+    color: var(--black-color);
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.menu .login:hover {
+    background: var(--secondary-color);
+}
+
+/* submenu */
+.sub-menu {
+    position: absolute;
+    top: 44px;
+    width: 200px;
+    background: var(--black-color);
+    transition: all .3s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sub-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+}
+
+
+
+.sub-menu ul li:hover {
+    background: var(--gray-color);
+}
+
+.sub-menu ul li a {
+    padding: 15px 15px;
+    color: var(--white-color);
+}
+
+.sub-menu ul li a:hover{
+    color: var(--primary-color);
+}
+
+/* end menu design */

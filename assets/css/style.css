@@ -43,6 +43,7 @@ img {
     background: var(--black-color);
     box-shadow: 0 2px 5px rgb(216, 216, 216);
     padding: 15px 0;
+    position: relative;
 }
 
 .menu__container {
@@ -53,17 +54,17 @@ img {
 
 .menu .logo {
     width: 120px;
-    
+
 }
 
-.menu .logo a{
+.menu .logo a {
     display: flex;
     align-items: center;
     color: var(--white-color);
     font-size: 20px;
 }
 
-.menu .logo i{
+.menu .logo i {
     background: var(--primary-color);
     color: var(--black-color);
     height: 40px;
@@ -119,6 +120,12 @@ img {
     background: var(--secondary-color);
 }
 
+.menu .menu-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 /* submenu */
 .sub-menu {
     position: absolute;
@@ -128,6 +135,7 @@ img {
     transition: all .3s linear;
     opacity: 0;
     visibility: hidden;
+    z-index: 999;
 }
 
 .sub-menu ul {
@@ -147,8 +155,47 @@ img {
     color: var(--white-color);
 }
 
-.sub-menu ul li a:hover{
+.sub-menu ul li a:hover {
     color: var(--primary-color);
 }
 
 /* end menu design */
+
+
+
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        width: 300px;
+        background: var(--black-color);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s linear;
+        z-index: 99;
+    }
+
+    .nav.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav ul{
+        flex-direction: column;
+        gap: 0px !important;
+    }
+    .menu .nav .menu-item a{
+        padding: 15px;
+    }
+
+    .menu .nav .menu-item:hover{
+        background: var(--gray-color);
+    }
+
+    
+
+}

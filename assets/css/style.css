@@ -32,9 +32,51 @@ img {
     width: 100%;
 }
 
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font: 34px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
 
 .container {
     padding: 0 10%;
+}
+
+.btn {
+    background: var(--primary-color);
+    padding: 10px 20px;
+    color: var(--black-color);
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* start menu design */
@@ -163,6 +205,65 @@ img {
 
 
 
+/* start banner section */
+
+.banner {
+    padding: 80px 0;
+    background: rgb(72, 201, 252);
+}
+
+.banner .banner__container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .left__side-box {
+    flex-basis: 50%;
+}
+
+
+.banner .right__side-box {
+    flex-basis: 50%;
+}
+
+
+/* end banner section */
+
+/* start category section */
+
+.category {
+    padding: 80px 0;
+}
+
+.category .categories {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+}
+
+.category .categories .item {
+    box-shadow: 0 0 7px rgb(202, 202, 202);
+    padding: 10px;
+    text-align: center;
+}
+
+.category .categories .item img {
+    width: 70px;
+}
+
+.category .categories .item a {
+    font-weight: 500;
+}
+
+.category .categories .item:hover a {
+    color: var(--black-color);
+}
+
+
+/* end category section */
+
 
 /* responsive */
 @media only screen and (max-width: 768px) {
@@ -179,23 +280,53 @@ img {
         z-index: 99;
     }
 
-    .nav.show{
+    .nav.show {
         opacity: 1;
         visibility: visible;
     }
 
-    .nav ul{
+    .nav ul {
         flex-direction: column;
         gap: 0px !important;
     }
-    .menu .nav .menu-item a{
+
+    .menu .nav .menu-item a {
         padding: 15px;
     }
 
-    .menu .nav .menu-item:hover{
+    .menu .nav .menu-item:hover {
         background: var(--gray-color);
     }
 
-    
+    .banner .left__side-box {
+        flex-basis: 100%;
+        text-align: center;
+    }
 
+    .banner .right__side-box {
+        display: none;
+    }
+
+
+    .category .categories {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+
+}
+
+@media only screen and (max-width: 425px) {
+
+    .category .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .nav{
+        width: 250px;
+    }
+    .category .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

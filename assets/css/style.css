@@ -168,6 +168,10 @@ p {
     gap: 10px;
 }
 
+#menu_btn{
+    display: none;
+}
+
 /* submenu */
 .sub-menu {
     position: absolute;
@@ -296,6 +300,10 @@ p {
 
     .menu .nav .menu-item:hover {
         background: var(--gray-color);
+    }
+
+    #menu_btn{
+        display: block;
     }
 
     .banner .left__side-box {
